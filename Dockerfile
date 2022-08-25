@@ -4,5 +4,6 @@ FROM edenhill/kcat:1.7.1 AS kcat
 
 FROM alpine:3.16.2
 
+RUN apk add curl bash
 COPY --from=topicctl /bin/topicctl /usr/local/bin/topicctl
 COPY --from=kcat /usr/bin/kcat /usr/local/bin/kcat
