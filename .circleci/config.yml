@@ -10,8 +10,8 @@ workflows:
           update-description: true
           use-buildkit: true
           tag: "${CIRCLE_TAG:-$CIRCLE_SHA1}"
-        filters:
-          branches:
-            ignore: /.*/
-          tags:
-            only: /^.*/
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^.*/
