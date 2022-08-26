@@ -7,7 +7,6 @@ workflows:
     jobs:
       - docker/publish:
           image: launchplatformllc/kafka-toolkit
-          update-description: true
           use-buildkit: true
           tag: "${CIRCLE_TAG:-$CIRCLE_SHA1}"
           filters:
