@@ -1,0 +1,17 @@
+version: '2.1'
+orbs:
+  docker: circleci/docker@2.1.3
+
+workflows:
+  build-and-publish:
+    jobs:
+      - docker/publish:
+          image: launchplatformllc/kafka-toolkit
+          update-description: true
+          use-buildkit: true
+          tag: "${CIRCLE_TAG:-$CIRCLE_SHA1}"
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^.*/
